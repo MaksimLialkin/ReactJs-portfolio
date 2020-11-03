@@ -1,7 +1,8 @@
+import classes from './Navbar.module.css'
 
 const Navbar = () => {
     return (
-        <nav className="nav">
+        <nav className={classes.nav}>
             <div><a href="#">Обо мне</a></div>
             <div><a href="#">Мой опыт</a></div>
             <div><a href="#">Мои навыки</a></div>
