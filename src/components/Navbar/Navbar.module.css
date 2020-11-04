@@ -1,4 +1,14 @@
 .nav {
     grid-area: nav;
     background-color: firebrick;
+    padding: 30px;
+    font-size: 20px;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item a.active {
+    color: green;
 }
