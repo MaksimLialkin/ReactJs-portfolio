@@ -1,11 +1,12 @@
 .app-wrapper {
   display: grid;
-  grid-template-rows: 400px 500px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 400px 700px;
+  grid-template-columns: 200px 2fr;
   grid-template-areas: "header header" "nav main";
+  gap: 5px;
 }
 
 .app-wrapper_content {
   grid-area: main;
-  background-color: orange;
+  /* background-color: aqua; */
 }
