@@ -1,6 +1,31 @@
 import classes from './MainSkills.module.css'
 
+const TitleItem = (props) => {
+    return (
+        <div className={`${classes.title} ${classes.title_fz16}`}>{props.name}</div>
+    )
+}
+
+const SkillsText = (props) => {
+    return (
+        <div className={classes.main_skillsText}>{props.text}</div>
+    )
+}
+
 const MainSkills = () => {
+
+    let TitleData = [
+        { name: 'Web-разработка' },
+        { name: 'Разработка приложений' },
+        { name: 'UI/UX Design' }
+    ]
+
+    let SkillsData = [
+        { text: 'WEB-разработка — процедура создания WEB-приложения или WEB-сайта. Основными этапами этого процесса являются такие мероприятия, как WEB-дизайн, вёрстка страниц сайта, WEB-программирование на стороне сервера и клиента, а также работы по конфигурированию WEB-сервера.' },
+        { text: 'это процесс, при котором приложения разрабатываются для небольших портативных устройств, таких, как КПК, смартфоны или сотовые телефоны. Эти приложения могут быть предустановлены на устройство в процессе производства, загружены пользователем с помощью различных платформ для распространения ПО или являться веб-приложениями, которые обрабатываются на стороне клиента (JavaScript) или сервера.' },
+        { text: ' UX-дизайн отвечает за функции, адаптивность продукта и то, какие эмоции он вызывает у пользователей. Чем понятнее интерфейс, тем легче пользователю получить результат и совершить целевое действие.' }
+    ]
+
     return <div className={classes.main_skills}>
         <div className={classes.skills}>
             <div className={classes.main_circle}>
@@ -12,8 +37,8 @@ const MainSkills = () => {
                 </svg>
             </div>
             <div>
-                <div className={`${classes.title} ${classes.title_fz16}`}>Web-разработка</div>
-                <div className={classes.main_skillsText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <TitleItem name={TitleData[0].name} />
+                <SkillsText text={SkillsData[0].text} />
             </div>
         </div>
         <div className={classes.skills}>
@@ -28,8 +53,8 @@ const MainSkills = () => {
                 </svg>
             </div>
             <div>
-                <div className={`${classes.title} ${classes.title_fz16}`}>Разработка приложений</div>
-                <div className={classes.main_skillsText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <TitleItem name={TitleData[1].name} />
+                <SkillsText text={SkillsData[1].text} />
             </div>
         </div>
         <div className={classes.skills}>
@@ -47,8 +72,8 @@ const MainSkills = () => {
                 </svg>
             </div>
             <div>
-                <div className={`${classes.title} ${classes.title_fz16}`}>UI/UX Design</div>
-                <div className={classes.main_skillsText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <TitleItem name={TitleData[2].name} />
+                <SkillsText text={SkillsData[2].text} />
             </div>
         </div>
     </div>

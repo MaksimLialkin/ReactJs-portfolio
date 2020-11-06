@@ -3,13 +3,13 @@
     grid-template-columns: minmax(300px, auto) minmax(300px, auto);
     grid-template-rows: minmax(115px, auto) minmax(115px, auto);
     grid-auto-rows: 1fr;
-    column-gap: 50px;
+    column-gap: 20px;
     row-gap: 20px;
 }
 
 .skills {
     display: grid;
-    grid-template-columns: 30px 200px;
+    grid-template-columns: 30px 300px;
     grid-column: 20px;
 }
 

@@ -1,6 +1,6 @@
 .main_wrapper {
     display: grid;
-    grid-template-columns: 400px 670px;
+    grid-template-columns: 400px 750px;
     grid-template-rows: minmax(245px, auto) minmax(255px, auto);
     grid-auto-rows: minmax(245px, auto);
     column-gap: 70px;
@@ -10,6 +10,9 @@
 
 .main_photo {
     background-image: url(../../img/banner-2.jpg);
+    width: 400px;
+    height: 670px;
+    background-size: cover;
     grid-row-start: 1;
     grid-row-end: 3;
 }
