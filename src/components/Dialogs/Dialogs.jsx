@@ -2,24 +2,38 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Dialogs.module.css'
 
+const DialogItem = (props) => {
+
+    let path = "/dialogs/" + props.id;
+
+    return <div className={classes.dialog}>
+        <NavLink to={path} activeClassName={classes.active}>{props.name}</NavLink>
+    </div>
+};
+
+const Message = (props) => {
+    return <div className={classes.message}>{props.text}</div>
+
+}
+
 const Dialogs = () => {
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
-                <div className={classes.dialog}><NavLink to="/dialogs/1" activeClassName={classes.active}>Максим</NavLink></div>
-                <div className={classes.dialog}><NavLink to="/dialogs/2" activeClassName={classes.active}>Мария</NavLink></div>
-                <div className={classes.dialog}><NavLink to="/dialogs/3" activeClassName={classes.active}>Игорь</NavLink></div>
-                <div className={classes.dialog}><NavLink to="/dialogs/4" activeClassName={classes.active}>Сергей</NavLink></div>
-                <div className={classes.dialog}><NavLink to="/dialogs/5" activeClassName={classes.active}>Борис</NavLink></div>
-                <div className={classes.dialog}><NavLink to="/dialogs/6" activeClassName={classes.active}>Валерий</NavLink></div>
-                <div className={classes.dialog}><NavLink to="/dialogs/7" activeClassName={classes.active}>Ирина</NavLink></div>
-            </div>
+                <DialogItem name="Максим" id="1" />
+                <DialogItem name="Мария" id="2" />
+                <DialogItem name="Игорь" id="3" />
+                <DialogItem name="Сергей" id="4" />
+                <DialogItem name="Борис" id="5" />
+                <DialogItem name="Валерий" id="6" />
+                <DialogItem name="Ирина" id="7" />
+            </div >
             <div className={classes.messages}>
-                <div className={classes.message}>Привет, как дела?</div>
-                <div className={classes.message}>Пошли сегодня в кино</div>
-                <div className={classes.message}>Сколько стоит турпутевка?</div>
+                <Message text="Привет, как дела?" />
+                <Message text="Пошли сегодня в кино" />
+                <Message text="Сколько стоит турпутевка?" />
             </div>
-        </div>
+        </div >
     )
 }
 
