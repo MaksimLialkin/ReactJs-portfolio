@@ -26,6 +26,10 @@ const MainSkills = () => {
         { text: ' UX-дизайн отвечает за функции, адаптивность продукта и то, какие эмоции он вызывает у пользователей. Чем понятнее интерфейс, тем легче пользователю получить результат и совершить целевое действие.' }
     ]
 
+    let TitleElements = TitleData.map(title => <TitleItem name={title.name} />)
+
+    let SkillsDataElements = SkillsData.map(skill => <SkillsText text={skill.text} />)
+
     return <div className={classes.main_skills}>
         <div className={classes.skills}>
             <div className={classes.main_circle}>
@@ -37,8 +41,8 @@ const MainSkills = () => {
                 </svg>
             </div>
             <div>
-                <TitleItem name={TitleData[0].name} />
-                <SkillsText text={SkillsData[0].text} />
+                {TitleElements[0]}
+                {SkillsDataElements[0]}
             </div>
         </div>
         <div className={classes.skills}>
@@ -53,8 +57,8 @@ const MainSkills = () => {
                 </svg>
             </div>
             <div>
-                <TitleItem name={TitleData[1].name} />
-                <SkillsText text={SkillsData[1].text} />
+                {TitleElements[1]}
+                {SkillsDataElements[1]}
             </div>
         </div>
         <div className={classes.skills}>
@@ -72,8 +76,8 @@ const MainSkills = () => {
                 </svg>
             </div>
             <div>
-                <TitleItem name={TitleData[2].name} />
-                <SkillsText text={SkillsData[2].text} />
+                {TitleElements[2]}
+                {SkillsDataElements[2]}
             </div>
         </div>
     </div>
