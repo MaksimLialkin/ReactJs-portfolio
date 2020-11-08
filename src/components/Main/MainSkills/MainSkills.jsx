@@ -1,16 +1,6 @@
 import classes from './MainSkills.module.css'
-
-const TitleItem = (props) => {
-    return (
-        <div className={`${classes.title} ${classes.title_fz16}`}>{props.name}</div>
-    )
-}
-
-const SkillsText = (props) => {
-    return (
-        <div className={classes.main_skillsText}>{props.text}</div>
-    )
-}
+import SkillsText from './SkillsText/SkillsText'
+import TitleItem from './TitleItem/TitleItem'
 
 const MainSkills = () => {
 
