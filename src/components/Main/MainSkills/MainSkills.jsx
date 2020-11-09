@@ -2,23 +2,11 @@ import classes from './MainSkills.module.css'
 import SkillsText from './SkillsText/SkillsText'
 import TitleItem from './TitleItem/TitleItem'
 
-const MainSkills = () => {
+const MainSkills = (props) => {
 
-    let TitleData = [
-        { name: 'Web-разработка' },
-        { name: 'Разработка приложений' },
-        { name: 'UI/UX Design' }
-    ]
+    let TitleElements = props.TitleData.map(title => <TitleItem name={title.name} />)
 
-    let SkillsData = [
-        { text: 'WEB-разработка — процедура создания WEB-приложения или WEB-сайта. Основными этапами этого процесса являются такие мероприятия, как WEB-дизайн, вёрстка страниц сайта, WEB-программирование на стороне сервера и клиента, а также работы по конфигурированию WEB-сервера.' },
-        { text: 'это процесс, при котором приложения разрабатываются для небольших портативных устройств, таких, как КПК, смартфоны или сотовые телефоны. Эти приложения могут быть предустановлены на устройство в процессе производства, загружены пользователем с помощью различных платформ для распространения ПО или являться веб-приложениями, которые обрабатываются на стороне клиента (JavaScript) или сервера.' },
-        { text: ' UX-дизайн отвечает за функции, адаптивность продукта и то, какие эмоции он вызывает у пользователей. Чем понятнее интерфейс, тем легче пользователю получить результат и совершить целевое действие.' }
-    ]
-
-    let TitleElements = TitleData.map(title => <TitleItem name={title.name} />)
-
-    let SkillsDataElements = SkillsData.map(skill => <SkillsText text={skill.text} />)
+    let SkillsDataElements = props.SkillsData.map(skill => <SkillsText text={skill.text} />)
 
     return <div className={classes.main_skills}>
         <div className={classes.skills}>

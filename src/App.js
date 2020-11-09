@@ -7,15 +7,16 @@ import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar';
 
 
-const App = () => {
+const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
         <div className="app-wrapper_content">
-          <Route path='/main' component={Main} />
-          <Route path='/dialogs' component={Dialogs} />
+          <Route path='/main' render={() => <Main TitleData={props.TitleData} SkillsData={props.SkillsData} />} />
+          <Route path='/dialogs' render={() => <Dialogs DialogsData={props.DialogsData} MessagesData={props.MessagesData} />} />
         </div>
       </div>
     </BrowserRouter>
