@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from '../render';
+
 let state = {
 
     mainPage: {
@@ -32,6 +34,16 @@ let state = {
             { id: 7, text: 'Приходите сегодня в гости' }
         ]
     }
+}
+
+export let addName = (postMessage) => {
+    let newPost = {
+        id: 8,
+        text: postMessage
+    };
+
+    state.dialogsPage.MessagesData.push(newPost)
+    rerenderEntireTree(state);
 }
 
 export default state

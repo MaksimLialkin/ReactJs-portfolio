@@ -24,3 +24,8 @@
     font-size: 14px;
     line-height: 18px;
 }
+
+.main_circle img {
+    width: 20px;
+    height: 20px;
+}
