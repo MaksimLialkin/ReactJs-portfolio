@@ -32,17 +32,25 @@ let state = {
             { id: 5, text: 'Привет, пойдем сегодня гулять?' },
             { id: 6, text: 'Хорошего дня и настроения' },
             { id: 7, text: 'Приходите сегодня в гости' }
-        ]
+        ],
+        newPostText: 'Hello world'
     }
 }
 
-export let addName = (postMessage) => {
+window.state = state;
+
+export let addName = () => {
     let newPost = {
         id: 8,
-        text: postMessage
+        text: state.dialogsPage.newPostText,
     };
+    state.dialogsPage.MessagesData.push(newPost);
+    state.dialogsPage.newPostText = '';
+    rerenderEntireTree(state);
+}
 
-    state.dialogsPage.MessagesData.push(newPost)
+export let updateNewPostText = (newText) => {
+    state.dialogsPage.newPostText = newText;
     rerenderEntireTree(state);
 }
 

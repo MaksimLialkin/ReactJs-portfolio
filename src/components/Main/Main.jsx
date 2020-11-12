@@ -9,7 +9,7 @@ const Main = (props) => {
         <div className={classes.main_wrapper}>
             <div className={classes.main_photo}></div>
             <MainDescription />
-            <MainSkills TitleData={props.state.TitleData} SkillsData={props.state.SkillsData} />
+            <MainSkills TitleData={props.mainPage.TitleData} SkillsData={props.mainPage.SkillsData} />
         </div>
     )
 }
