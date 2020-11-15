@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from '../render';
+let rerenderEntireTree = () => {
+    console.log("Hello")
+}
 
 let state = {
 
@@ -54,4 +56,8 @@ export let updateNewPostText = (newText) => {
     rerenderEntireTree(state);
 }
 
-export default state
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
+}
+
+export default state;
