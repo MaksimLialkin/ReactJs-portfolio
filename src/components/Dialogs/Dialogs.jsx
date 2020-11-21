@@ -12,13 +12,14 @@ const Dialogs = (props) => {
     let newPostElements = React.createRef();
 
     let addName = () => {
-        props.addName();
+        // props.addName();
+        props.dispatch({ type: 'ADD-NAME' })
     }
 
     let onPostChange = () => {
         let text = newPostElements.current.value;
-        // console.log(text)
-        props.updateNewPostText(text);
+        // props.updateNewPostText(text);
+        props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
     }
 
     return (<div>
