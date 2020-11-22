@@ -1,7 +1,9 @@
 import React from 'react';
 import Message from './Message/Message'
-import DialogItem from './DialogItem/DialogItem';
+import DialogItem from './DialogItem/DialogItem'
 import classes from './Dialogs.module.css'
+import { addNameActionCreator, updateNewPostTextActionCreator } from '../../redux/state'
+
 
 const Dialogs = (props) => {
 
@@ -13,13 +15,13 @@ const Dialogs = (props) => {
 
     let addName = () => {
         // props.addName();
-        props.dispatch({ type: 'ADD-NAME' })
+        props.dispatch(addNameActionCreator())
     }
 
     let onPostChange = () => {
         let text = newPostElements.current.value;
         // props.updateNewPostText(text);
-        props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+        props.dispatch(updateNewPostTextActionCreator(text))
     }
 
     return (<div>

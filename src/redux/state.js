@@ -1,3 +1,7 @@
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
+    ADD_NAME = 'ADD-NAME';
+
+
 let store = {
     _state:
     {
@@ -46,22 +50,8 @@ let store = {
         this._callSubscriber = observer;
     },
 
-    // addName() {
-    //     let newPost = {
-    //         id: 8,
-    //         text: this._state.dialogsPage.newPostText,
-    //     };
-    //     this._state.dialogsPage.MessagesData.push(newPost);
-    //     this._state.dialogsPage.newPostText = '';
-    //     this._callSubscriber(this._state);
-    // },
-    // updateNewPostText(newText) {
-    //     this._state.dialogsPage.newPostText = newText;
-    //     this._callSubscriber(this._state);
-    // },
-
     dispatch(action) {
-        if (action.type === 'ADD-NAME') {
+        if (action.type === ADD_NAME) {
             let newPost = {
                 id: 8,
                 text: this._state.dialogsPage.newPostText,
@@ -69,10 +59,22 @@ let store = {
             this._state.dialogsPage.MessagesData.push(newPost);
             this._state.dialogsPage.newPostText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.dialogsPage.newPostText = action.newText;
             this._callSubscriber(this._state);
         }
+    }
+}
+
+export const addNameActionCreator = () => {
+    return {
+        type: ADD_NAME,
+    }
+}
+
+export const updateNewPostTextActionCreator = (text) => {
+    return {
+        type: UPDATE_NEW_POST_TEXT, newText: text
     }
 }
 
