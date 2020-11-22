@@ -1,5 +1,5 @@
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
-    ADD_NAME = 'ADD-NAME';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY',
+    ADD_MESSAGE = 'ADD-MESSAGE';
 
 
 let store = {
@@ -36,7 +36,7 @@ let store = {
                 { id: 6, text: 'Хорошего дня и настроения' },
                 { id: 7, text: 'Приходите сегодня в гости' }
             ],
-            newPostText: 'Hello world'
+            newMessageText: ''
         }
     },
     _callSubscriber() {
@@ -51,30 +51,30 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_NAME) {
-            let newPost = {
+        if (action.type === ADD_MESSAGE) {
+            let newMessage = {
                 id: 8,
-                text: this._state.dialogsPage.newPostText,
+                text: this._state.dialogsPage.newMessageText,
             };
-            this._state.dialogsPage.MessagesData.push(newPost);
-            this._state.dialogsPage.newPostText = '';
+            this._state.dialogsPage.MessagesData.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
             this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.dialogsPage.newPostText = action.newText;
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageText = action.newText;
             this._callSubscriber(this._state);
         }
     }
 }
 
-export const addNameActionCreator = () => {
+export const sendMessageActionCreator = () => {
     return {
-        type: ADD_NAME,
+        type: ADD_MESSAGE
     }
 }
 
-export const updateNewPostTextActionCreator = (text) => {
+export const updateNewMessageBodyActionCreator = (text) => {
     return {
-        type: UPDATE_NEW_POST_TEXT, newText: text
+        type: UPDATE_NEW_MESSAGE_BODY, newText: text
     }
 }
 
