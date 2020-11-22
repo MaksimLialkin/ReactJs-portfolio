@@ -1,6 +1,4 @@
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY',
-    ADD_MESSAGE = 'ADD-MESSAGE';
-
+import dialogsReducer from "./dialogs-reducer";
 
 let store = {
     _state:
@@ -51,33 +49,10 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_MESSAGE) {
-            let newMessage = {
-                id: 8,
-                text: this._state.dialogsPage.newMessageText,
-            };
-            this._state.dialogsPage.MessagesData.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._callSubscriber(this._state);
     }
 }
-
-export const sendMessageActionCreator = () => {
-    return {
-        type: ADD_MESSAGE
-    }
-}
-
-export const updateNewMessageBodyActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGE_BODY, newText: text
-    }
-}
-
 
 export default store;
 window.store = store;
