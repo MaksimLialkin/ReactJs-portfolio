@@ -1,0 +1,13 @@
+.aboutWrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.aboutImg {
+    background-image: url(../../img/banner-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 600px;
+}
