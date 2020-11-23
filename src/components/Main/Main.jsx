@@ -1,24 +1,18 @@
 import classes from './Main.module.css'
+import MainSkills from './MainSkills/MainSkills'
 
 const Main = () => {
     return (
-        <div className={classes.about}>
-            <div className={classes.aboutWrapper}>
-                <div className={classes.aboutImg}></div>
-                <div className={classes.aboutDescr}>
-                    <div className={classes.Descr_title}>Про меня</div>
-                    <div className={classes.Descr_subtitle}>Меня зовут Максим</div>
-                    <div className={classes.divider}></div>
-                    <p className={classes.Descr_text}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla nostrum placeat cupiditate vitae similique rerum recusandae dolor sunt natus provident ratione impedit rem, odio unde tempora doloremque tempore non ducimus!</p>
+        <div className={classes.main}>
+            <div className={classes.main_wrapper}>
+                <div className={classes.main_photo}></div>
+                <div className={classes.main_descr}>
+                    <h2 className={`${classes.title} ${classes.title_fz20} ${classes.subtitle}`}>Обо мне</h2>
+                    <div className={classes.main_name}>Меня зовут Максим</div>
+                    <div className={classes.devider}></div>
+                    <p className={classes.main_text}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium repellat tenetur libero veritatis dolores architecto reprehenderit unde blanditiis laborum, nostrum, labore earum. Architecto molestias quos fugit nemo quo sapiente temporibus.</p>
                 </div>
-                <div className={classes.aboutSkills}>
-                    <div className={classes.Skills_item}>
-                    </div>
-                    <div className={classes.Skills_item}>
-                    </div>
-                    <div className={classes.Skills_item}>
-                    </div>
-                </div>
+                <MainSkills />
             </div>
         </div>
     )

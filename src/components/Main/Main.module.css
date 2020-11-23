@@ -1,13 +1,71 @@
-.aboutWrapper {
+.main_wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 400px 670px;
+    grid-template-rows: minmax(245px, auto) minmax(255px, auto);
+    grid-auto-rows: minmax(245px, auto);
+    column-gap: 70px;
+    row-gap: 20px;
 }
 
-.aboutImg {
+.main_photo {
     background-image: url(../../img/banner-2.jpg);
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 400px;
-    height: 600px;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.title {
+    font-size: 20px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.subtitle::before {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: #FFA501;
+    border-radius: 50%;
+    z-index: -1;
+    top: -3px;
+    left: 0px;
+}
+
+.main_name {
+    font-size: 36px;
+}
+
+.devider {
+    width: 60px;
+    height: 3px;
+    background: #FFA501;
+    margin: 20px 0;
+}
+
+.main_text {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.main_skills {
+    display: grid;
+    grid-template-columns: minmax(300px, auto) minmax(300px, auto);
+    grid-template-rows: minmax(115px, auto) minmax(115px, auto);
+    grid-auto-rows: 1fr;
+    column-gap: 50px;
+    row-gap: 20px;
+}
+
+.title_fz16 {
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 21px;
+}
+
+.main_skillsText {
+    font-size: 18px;
+    line-height: 23px;
+    padding: 10px 0;
 }
