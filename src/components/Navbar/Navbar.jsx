@@ -7,9 +7,9 @@ const Navbar = () => {
         <nav className={classes.nav}>
             <div className={classes.item}><NavLink to="/main" activeClassName={classes.active}>Обо мне</NavLink></div>
             <div className={classes.item}><NavLink to="/dialogs" activeClassName={classes.active}>Сообщения</NavLink></div>
-            <div className={classes.item}><a href="#">Мой опыт</a></div>
-            <div className={classes.item}><a href="#">Мои работы</a></div>
-            <div className={classes.item}><a href="#">Прайс-лист</a></div>
+            <div className={classes.item}><NavLink to="/experience">Мой опыт</NavLink></div>
+            <div className={classes.item}><NavLink to="/work">Мои работы</NavLink></div>
+            <div className={classes.item}><NavLink to="/price">Прайс-лист</NavLink></div>
         </nav>
     )
 }
