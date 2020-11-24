@@ -1,10 +1,11 @@
 import classes from '../../Main.module.css'
 
-const SkillsPost = () => {
+const SkillsPost = (props) => {
     return (
         <div className={classes.main_skillsPost}>
-            <div className={`${classes.title} ${classes.title_fz16}`}>Web-разработка</div>
-            <div className={classes.main_skillsText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH51HPzXXLgwWh4FH3MjZ_L1akejD5GP6f2w&usqp=CAU" alt="" />
+            <div className={`${classes.title} ${classes.title_fz16}`}>{props.title}</div>
+            <div className={classes.main_skillsText}>{props.text}</div>
         </div>
     )
 }
