@@ -10,42 +10,11 @@
 .main_photo {
     background-image: url(../../img/banner-2.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     grid-row-start: 1;
     grid-row-end: 3;
-}
-
-.title {
-    font-size: 20px;
-    position: relative;
-    padding-left: 12px;
-}
-
-.subtitle::before {
-    content: "";
-    position: absolute;
-    width: 36px;
-    height: 36px;
-    background: #FFA501;
-    border-radius: 50%;
-    z-index: -1;
-    top: -3px;
-    left: 0px;
-}
-
-.main_name {
-    font-size: 36px;
-}
-
-.devider {
-    width: 60px;
-    height: 3px;
-    background: #FFA501;
-    margin: 20px 0;
-}
-
-.main_text {
-    font-size: 14px;
-    line-height: 21px;
+    width: 400px;
+    height: 670px;
 }
 
 .main_skills {
