@@ -1,21 +1,19 @@
 import classes from '../Main.module.css'
 import SkillsPost from './SkillsPost/SkillsPost';
+import { addSkillsActionCreator, updateNewSkillsTextActionCreator } from '../../../redux/main-reducer'
 
-const MainSkills = () => {
+const MainSkills = (props) => {
 
-    let SkillsData = [
-        {
-            id: 1, title: 'Web-разработка', text: 'Процесс создания веб-сайта или веб-приложения. Основными этапами процесса являются веб-дизайн, вёрстка страниц, программирование на стороне клиента и сервера, а также конфигурирование веб-сервера.'
-        },
-        {
-            id: 2, title: 'UI/UX Design', text: 'UX-дизайн отвечает за функции, адаптивность продукта и то, какие эмоции он вызывает у пользователей. Чем понятнее интерфейс, тем легче пользователю получить результат и совершить целевое действие.'
-        },
-        {
-            id: 3, title: 'Разработка приложений', text: 'Разработка приложений для мобильных устройств — это процесс, при котором приложения разрабатываются для небольших портативных устройств, таких, как КПК, смартфоны или сотовые телефоны.'
-        }
-    ]
+    let SkillsElements = props.skills.map(skills => <SkillsPost id={skills.id} title={skills.title} text={skills.text} />)
 
-    let SkillsElements = SkillsData.map(skills => <SkillsPost id={skills.id} title={skills.title} text={skills.text} />)
+    let addSkills = () => {
+        props.dispatch(addSkillsActionCreator())
+    }
+
+    let onSkillsChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateNewSkillsTextActionCreator(text));
+    }
 
     return (
         <div>
@@ -23,10 +21,10 @@ const MainSkills = () => {
                 {SkillsElements}
             </div>
             <div>
-                <textarea></textarea>
+                <textarea onChange={onSkillsChange} value={props.newSkillsText} />
             </div>
             <div>
-                <button>Add skills</button>
+                <button onClick={addSkills}>Add skills</button>
             </div>
         </div>
     )

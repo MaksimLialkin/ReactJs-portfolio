@@ -1,4 +1,5 @@
 import dialogsReducer from "./dialogs-reducer";
+import mainReducer from "./main-reducer";
 
 let store = {
     _state:
@@ -23,6 +24,20 @@ let store = {
                 { id: 7, text: 'Приходите сегодня в гости' }
             ],
             newMessageText: ''
+        },
+        mainPage: {
+            skills: [
+                {
+                    id: 1, title: 'Web-разработка', text: 'Процесс создания веб-сайта или веб-приложения. Основными этапами процесса являются веб-дизайн, вёрстка страниц, программирование на стороне клиента и сервера, а также конфигурирование веб-сервера.'
+                },
+                {
+                    id: 2, title: 'UI/UX Design', text: 'UX-дизайн отвечает за функции, адаптивность продукта и то, какие эмоции он вызывает у пользователей. Чем понятнее интерфейс, тем легче пользователю получить результат и совершить целевое действие.'
+                },
+                {
+                    id: 3, title: 'Разработка приложений', text: 'Разработка приложений для мобильных устройств — это процесс, при котором приложения разрабатываются для небольших портативных устройств, таких, как КПК, смартфоны или сотовые телефоны.'
+                }
+            ],
+            newSkillsText: 'Тестировщик'
         }
     },
     _callSubscriber() {
@@ -38,6 +53,7 @@ let store = {
 
     dispatch(action) {
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.mainPage = mainReducer(this._state.mainPage, action);
         this._callSubscriber(this._state);
     }
 }
