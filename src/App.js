@@ -7,13 +7,16 @@ import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main';
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
         <div className="app-wrapper_content">
-          <Route path='/main' render={() => <Main />} />
+          <Route path='/main' render={() => <Main
+            mainPage={props.state.mainPage}
+            dispatch={props.dispatch} />} />
           <Route path='/dialogs' render={() => <Dialogs
             dialogsPage={props.state.dialogsPage}
             dispatch={props.dispatch} />} />
