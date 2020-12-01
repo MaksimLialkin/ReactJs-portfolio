@@ -1,13 +1,12 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import React from 'react';
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main';
+import DialogsContainer from './components/Dialogs/Dialogs.Container';
 
 const App = (props) => {
-
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -15,11 +14,9 @@ const App = (props) => {
         <Navbar />
         <div className="app-wrapper_content">
           <Route path='/main' render={() => <Main
-            mainPage={props.state.mainPage}
-            dispatch={props.dispatch} />} />
-          <Route path='/dialogs' render={() => <Dialogs
-            dialogsPage={props.state.dialogsPage}
-            dispatch={props.dispatch} />} />
+            store={props.store} />} />
+          <Route path='/dialogs' render={() => <DialogsContainer
+            store={props.store} />} />
         </div>
       </div>
     </BrowserRouter>

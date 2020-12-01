@@ -1,18 +1,17 @@
+import React from 'react';
 import classes from '../Main.module.css'
 import SkillsPost from './SkillsPost/SkillsPost';
-import { addSkillsActionCreator, updateNewSkillsTextActionCreator } from '../../../redux/main-reducer'
 
 const MainSkills = (props) => {
-
     let SkillsElements = props.skills.map(skills => <SkillsPost id={skills.id} title={skills.title} text={skills.text} />)
 
-    let addSkills = () => {
-        props.dispatch(addSkillsActionCreator())
+    let onAddSkills = () => {
+        props.addSkills()
     }
 
     let onSkillsChange = (e) => {
         let text = e.target.value;
-        props.dispatch(updateNewSkillsTextActionCreator(text));
+        props.updateNewSkillsText(text);
     }
 
     return (
@@ -24,7 +23,7 @@ const MainSkills = (props) => {
                 <textarea onChange={onSkillsChange} value={props.newSkillsText} />
             </div>
             <div>
-                <button onClick={addSkills}>Add skills</button>
+                <button onClick={onAddSkills}>Add skills</button>
             </div>
         </div>
     )
