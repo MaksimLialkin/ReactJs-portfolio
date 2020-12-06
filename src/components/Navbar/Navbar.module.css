@@ -1,12 +1,12 @@
 .nav {
     grid-area: nav;
-    background-color: firebrick;
+    /* background-color: firebrick; */
     padding: 30px;
     font-size: 20px;
 }
 
 .item a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
 }
 

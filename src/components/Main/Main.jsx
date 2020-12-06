@@ -8,7 +8,7 @@ const Main = (props) => {
             <div className={classes.main_wrapper}>
                 <div className={classes.main_photo}></div>
                 <MainInfo />
-                <MainSkillsContainer store={props.store} />
+                <MainSkillsContainer />
             </div>
         </div>
     )

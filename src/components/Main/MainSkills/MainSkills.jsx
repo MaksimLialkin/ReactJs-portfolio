@@ -23,7 +23,7 @@ const MainSkills = (props) => {
                 <textarea onChange={onSkillsChange} value={props.newSkillsText} />
             </div>
             <div>
-                <button onClick={onAddSkills}>Add skills</button>
+                <button className={classes.btn} onClick={onAddSkills}>Add skills</button>
             </div>
         </div>
     )

@@ -1,21 +1,26 @@
 import { addSkillsActionCreator, updateNewSkillsTextActionCreator } from '../../../redux/main-reducer'
+import StoreContext from '../../../StoreContext';
 import MainSkills from './MainSkills';
 
-const MainSkillsContainer = (props) => {
-    let state = props.store.getState();
-
-    let addSkills = () => {
-        props.store.dispatch(addSkillsActionCreator())
-    }
-
-    let onSkillsChange = (text) => {
-        props.store.dispatch(updateNewSkillsTextActionCreator(text));
-    }
-
+const MainSkillsContainer = () => {
     return (
-        <MainSkills updateNewSkillsText={onSkillsChange} addSkills={addSkills}
-            skills={state.mainPage.skills}
-            newSkillsText={state.mainPage.newSkillsText} />
+        <StoreContext.Consumer>
+            { store => {
+                let state = store.getState();
+                let addSkills = () => {
+                    store.dispatch(addSkillsActionCreator())
+                }
+
+                let onSkillsChange = (text) => {
+                    store.dispatch(updateNewSkillsTextActionCreator(text));
+                }
+                return <MainSkills updateNewSkillsText={onSkillsChange}
+                    addSkills={addSkills}
+                    skills={state.mainPage.skills}
+                    newSkillsText={state.mainPage.newSkillsText} />
+            }
+            }
+        </StoreContext.Consumer>
     )
 }
 export default MainSkillsContainer;
