@@ -18,18 +18,23 @@ let initialState = {
 
 const mainReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_SKILLS:
+        case ADD_SKILLS: {
             let newSkills = {
                 id: 4,
                 title: state.newSkillsText,
                 text: 'любой текст по теме'
             }
-            state.skills.push(newSkills);
-            state.newSkillsText = '';
-            return state;
-        case UPDATE_NEW_SKILLS_TEXT:
-            state.newSkillsText = action.newText;
-            return state;
+            let stateCopy = { ...state };
+            stateCopy.skills = [...state.skills];
+            stateCopy.skills.push(newSkills);
+            stateCopy.newSkillsText = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_SKILLS_TEXT: {
+            let stateCopy = { ...state };
+            stateCopy.newSkillsText = action.newText;
+            return stateCopy;
+        }
         default:
             return state;
     }
