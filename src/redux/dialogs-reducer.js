@@ -38,7 +38,7 @@ const dialogsReducer = (state = initialState, action) => {
         case UPDATE_NEW_MESSAGE_BODY:
             return {
                 ...state,
-                newMessageText: action.newText
+                newMessageText: action.text
             };
         default:
             return state;
@@ -53,7 +53,7 @@ export const sendMessageActionCreator = () => {
 
 export const updateNewMessageBodyActionCreator = (text) => {
     return {
-        type: UPDATE_NEW_MESSAGE_BODY, newText: text
+        type: UPDATE_NEW_MESSAGE_BODY, text
     }
 }
 

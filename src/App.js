@@ -4,8 +4,8 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main';
-import DialogsContainer from './components/Dialogs/Dialogs.Container';
-import Users from './components/Users/Users';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   return (
@@ -16,7 +16,7 @@ const App = (props) => {
         <div className="app-wrapper_content">
           <Route path='/main' render={() => <Main />} />
           <Route path='/dialogs' render={() => <DialogsContainer />} />
-          <Route path='/users' render={() => <Users />} />
+          <Route path='/users' render={() => <UsersContainer />} />
         </div>
       </div>
     </BrowserRouter>
