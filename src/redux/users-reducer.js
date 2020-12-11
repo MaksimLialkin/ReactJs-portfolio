@@ -3,29 +3,7 @@ const FOLLOW = 'FOLLOW',
     SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-        {
-            id: 1,
-            photoUrl: 'https://www.ferra.ru/thumb/1800x0/filters:quality(75):no_upscale()/imgs/2020/11/22/13/4358185/d262932812b77c55738af7b3e9cdcb78ce4a34a6.jpg',
-            followed: false,
-            fullname: 'Maksim',
-            status: 'I am a frontend-developer',
-            location: { city: 'Moscow', country: 'Russia' }
-        },
-        {
-            id: 2,
-            photoUrl: 'https://www.ferra.ru/thumb/1800x0/filters:quality(75):no_upscale()/imgs/2020/11/22/13/4358185/d262932812b77c55738af7b3e9cdcb78ce4a34a6.jpg',
-            followed: true,
-            fullname: 'Mariia',
-            status: 'I am a assistant',
-            location: { city: 'New-York', country: 'USA' }
-        },
-        {
-            id: 3,
-            photoUrl: 'https://www.ferra.ru/thumb/1800x0/filters:quality(75):no_upscale()/imgs/2020/11/22/13/4358185/d262932812b77c55738af7b3e9cdcb78ce4a34a6.jpg',
-            followed: false, fullname: 'Valeriy', status: 'I am a assistant too', location: { city: 'Paris', country: 'France' }
-        },
-    ]
+    users: []
 }
 
 const usersReducer = (state = initialState, action) => {
