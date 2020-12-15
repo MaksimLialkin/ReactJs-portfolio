@@ -1,6 +1,17 @@
+import React from 'react'
 import { connect } from 'react-redux';
 import { addSkillsActionCreator, updateNewSkillsTextActionCreator } from '../../../redux/main-reducer'
 import MainSkills from './MainSkills';
+
+class MainSkillsContainer extends React.Component {
+    render() {
+        return <MainSkills skills={this.props.skills}
+            addSkills={this.props.addSkills}
+            updateNewSkillsText={this.props.updateNewSkillsText}
+            newSkillsText={this.props.newSkillsText}
+        />
+    }
+}
 
 let mapStateToProps = (state) => {
     return {
@@ -19,6 +30,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const MainSkillsContainer = connect(mapStateToProps, mapDispatchToProps)(MainSkills)
-
-export default MainSkillsContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(MainSkillsContainer)
