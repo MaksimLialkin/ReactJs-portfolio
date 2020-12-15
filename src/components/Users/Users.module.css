@@ -22,3 +22,8 @@ button {
 .selectedPage {
     font-weight: bold;
 }
+
+.number {
+    padding: 2px;
+    cursor: pointer;
+}
