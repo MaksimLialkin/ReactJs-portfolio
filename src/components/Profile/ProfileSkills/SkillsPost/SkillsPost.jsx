@@ -1,4 +1,4 @@
-import classes from '../../Main.module.css'
+import classes from '../../Profile.module.css'
 
 const SkillsPost = (props) => {
     return (

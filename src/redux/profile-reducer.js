@@ -1,5 +1,6 @@
 const ADD_SKILLS = 'ADD-SKILLS',
-    UPDATE_NEW_SKILLS_TEXT = 'UPDATE-NEW-SKILLS-TEXT'
+    UPDATE_NEW_SKILLS_TEXT = 'UPDATE-NEW-SKILLS-TEXT',
+    SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 let initialState = {
     skills: [
@@ -13,10 +14,11 @@ let initialState = {
             id: 3, title: 'Разработка приложений', text: 'Разработка приложений для мобильных устройств — это процесс, при котором приложения разрабатываются для небольших портативных устройств, таких, как КПК, смартфоны или сотовые телефоны.'
         }
     ],
-    newSkillsText: 'Тестировщик'
+    newSkillsText: 'Тестировщик',
+    profile: null
 }
 
-const mainReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_SKILLS: {
             let newSkills = {
@@ -35,6 +37,9 @@ const mainReducer = (state = initialState, action) => {
             stateCopy.newSkillsText = action.newText;
             return stateCopy;
         }
+        case SET_USER_PROFILE: {
+            return { ...state, profile: action.profile }
+        }
         default:
             return state;
     }
@@ -47,5 +52,5 @@ export let updateNewSkillsTextActionCreator = (text) => {
         type: UPDATE_NEW_SKILLS_TEXT, newText: text
     }
 }
-
-export default mainReducer
+export let setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
+export default profileReducer

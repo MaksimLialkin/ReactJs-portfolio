@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Main from './components/Main/Main';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 
@@ -14,7 +14,7 @@ const App = (props) => {
         <Header />
         <Navbar />
         <div className="app-wrapper_content">
-          <Route path='/main' render={() => <Main />} />
+          <Route path='/profile' render={() => <ProfileContainer />} />
           <Route path='/dialogs' render={() => <DialogsContainer />} />
           <Route path='/users' render={() => <UsersContainer />} />
         </div>

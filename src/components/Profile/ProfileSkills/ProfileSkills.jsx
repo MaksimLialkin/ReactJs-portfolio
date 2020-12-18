@@ -1,8 +1,8 @@
 import React from 'react';
-import classes from '../Main.module.css'
+import classes from '../Profile.module.css'
 import SkillsPost from './SkillsPost/SkillsPost';
 
-const MainSkills = (props) => {
+const ProfileSkills = (props) => {
     let SkillsElements = props.skills.map(skills => <SkillsPost id={skills.id} title={skills.title} text={skills.text} />)
 
     let onAddSkills = () => {
@@ -28,4 +28,4 @@ const MainSkills = (props) => {
         </div>
     )
 }
-export default MainSkills;
+export default ProfileSkills;

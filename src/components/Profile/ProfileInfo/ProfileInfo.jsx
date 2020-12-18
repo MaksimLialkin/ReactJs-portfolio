@@ -1,6 +1,11 @@
-import classes from './MainInfo.module.css'
+import classes from './ProfileInfo.module.css'
+import Preloader from '../../Common/Preloader/Preloader'
 
-const MainInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
+
     return (
         <div>
             <div className={classes.main_descr}>
@@ -9,8 +14,10 @@ const MainInfo = () => {
                 <div className={classes.devider}></div>
                 <p className={classes.main_text}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium repellat tenetur libero veritatis dolores architecto reprehenderit unde blanditiis laborum, nostrum, labore earum. Architecto molestias quos fugit nemo quo sapiente temporibus.</p>
             </div>
+            <div>{props.profile.fullName}</div>
+            <div><img src={props.profile.photos.small} /></div>
         </div>
     )
 }
 
-export default MainInfo;
+export default ProfileInfo;
