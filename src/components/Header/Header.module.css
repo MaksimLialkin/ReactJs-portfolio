@@ -5,3 +5,13 @@
     background-size: cover;
     grid-area: header;
 }
+
+.loginBlock {
+    float: left;
+    padding: 30px;
+}
+
+.loginBlock a {
+    color: white;
+    text-decoration: none;
+}
