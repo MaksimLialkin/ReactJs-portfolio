@@ -1,3 +1,5 @@
+import { usersAPI } from "../api/api";
+
 const ADD_SKILLS = 'ADD-SKILLS',
     UPDATE_NEW_SKILLS_TEXT = 'UPDATE-NEW-SKILLS-TEXT',
     SET_USER_PROFILE = 'SET_USER_PROFILE'
@@ -53,4 +55,13 @@ export let updateNewSkillsTextActionCreator = (text) => {
     }
 }
 export let setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
+
+export const getUsersProfile = (userId) => {
+    return (dispatch) => {
+        usersAPI.getUsersProfile(userId).then(data => {
+            dispatch(setUserProfile(data));
+        })
+    }
+}
+
 export default profileReducer
