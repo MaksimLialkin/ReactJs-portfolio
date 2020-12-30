@@ -9,13 +9,15 @@ class DialogsContainer extends React.Component {
             dialogsPage={this.props.dialogsPage}
             addMessage={this.props.addMessage}
             updateNewMessageBody={this.props.updateNewMessageBody}
+            isAuth={this.props.isAuth}
         />
     }
 }
 
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth
     }
 }
 let mapDispatchToProps = (dispatch) => {
