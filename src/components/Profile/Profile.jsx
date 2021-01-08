@@ -8,7 +8,7 @@ const Profile = (props) => {
         <div className={classes.main}>
             <div className={classes.main_wrapper}>
                 <div className={classes.main_photo}></div>
-                <ProfileInfo profile={props.profile} />
+                <ProfileInfo profile={props.profile} status={props.status} updateUsersStatus={props.updateUsersStatus} />
                 <ProfileSkillsContainer />
             </div>
         </div>
